@@ -1,0 +1,77 @@
+{
+  "name": "incidents_ac09587u08",
+  "version": "0.0.1",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "description": "Incident Report AC09587U08",
+  "engines": {
+    "node": "^16"
+  },
+  "dependencies": {
+    "@sap/audit-logging": "^5",
+    "@sap/cds": "^6.1",
+    "@sap/xssec": "^3",
+    "debug": "^4.3",
+    "express": "^4",
+    "hdb": "^0.19",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.102.5",
+    "sqlite3": "^5.0.2"
+  },
+  "sapux": [
+    "app/resources/fiori",
+    "app/incidents_ac09587u08_ui"
+  ],
+  "scripts": {
+    "start": "cds run",
+    "watch-incidents_ac09587u08_ui": "cds watch --open incidents_ac09587u08_ui/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "restrict_all_services": false,
+        "kind": "dummy"
+      },
+      "db": {
+        "[production]": {
+          "kind": "hana",
+          "deploy-format": "hdbtable"
+        },
+        "[development]": {
+          "kind": "sql"
+        },
+        "model": [
+          "db",
+          "srv"
+        ]
+      }
+    }
+  }
+}
