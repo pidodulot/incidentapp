@@ -38,7 +38,7 @@
 							</ComboBox>
 						    </f:fields>
 						</f:FormElement>
-						<f:FormElement label="Priority">
+						<f:FormElement label="Priority - test for SAP CI/CD">
 						    <f:fields>
 							<ComboBox id="priority" items="{/Priority}" change="onSelectionChange" selectedKey="{initial>/priority_code}">
 							    <core:Item key="{code}" text="{name}"/>
